@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () < DieDelegate, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *dieLabel;
 
 @end
@@ -18,10 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.die = [[Die alloc] init];
+    self.die.delegate = self;
 }
 
 - (IBAction)onRollButtonPressed:(id)sender {
     [self.die roll];
+}
+
+-(void)dieRolledWithValue:(int)value{
+    self.dieLabel.text = @(value).description;
+    NSLog(@"I'm the viewController");
 }
 
 @end
