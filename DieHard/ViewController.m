@@ -30,4 +30,8 @@
     NSLog(@"I'm the viewController");
 }
 
+-(void)dieFellOffTheTable{
+    self.dieLabel.text = @"😱";
+}
+
 @end

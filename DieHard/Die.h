@@ -10,6 +10,7 @@
 @protocol DieDelegate
 
 -(void)dieRolledWithValue:(int)value;
+-(void)dieFellOffTheTable;
 
 @end
 
